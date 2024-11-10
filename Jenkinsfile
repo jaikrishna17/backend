@@ -8,10 +8,12 @@ pipeline {
         ansiColor('xterm')
     }
     stages {
-        stage('test') {
+        stage('Install Dependencies') {
             steps {
                sh """
-                echo "testing"
+                npm install
+                ls -ltr
+                echo "application version: $appVersion"
                """
             }
         }
